@@ -146,10 +146,6 @@ elif dataset == 'regdb':
     # generate the idx of each person identity
     color_pos, thermal_pos = GenIdx(trainset.train_color_label, trainset.train_thermal_label)
 
-    # testing set(visible to thermal)
-    # query_img, query_label = process_test_regdb(data_path, trial=args.trial, modal='visible')
-    # gall_img, gall_label = process_test_regdb(data_path, trial=args.trial, modal='thermal')
-    # (thermal to visible)
     query_img, query_label = process_test_regdb(data_path, trial=args.trial, modal='thermal')
     gall_img, gall_label = process_test_regdb(data_path, trial=args.trial, modal='visible')
 elif dataset == 'llcm':
@@ -198,14 +194,6 @@ criterion_cir = PairCircle(margin=0.45, gamma=64)
 criterion_id.to(device)
 criterion_cir.to(device)
 
-# ignored_params = list(map(id, net.bottleneck.parameters())) \
-#                  + list(map(id, net.classifier.parameters())) \
-#                  + list(map(id, net.visible_classifier.parameters())) \
-#                  + list(map(id, net.infrared_classifier.parameters())) \
-#                  + list(map(id, net.visible_classifier_.parameters())) \
-#                  + list(map(id, net.infrared_classifier_.parameters())) \
-#                  + list(map(id, net.base.base.layer3.parameters())) \
-#                  + list(map(id, net.base.base.layer4.parameters()))
 ignored_params = list(map(id, net.bottleneck.parameters())) \
                  + list(map(id, net.classifier.parameters())) \
                  + list(map(id, net.DD.parameters())) \
@@ -226,8 +214,6 @@ optimizer = optim.SGD([{'params': base_params, 'lr': 0.1 * args.lr},
 warm_up_with_cosine_lr = lambda epoch: epoch / args.warm_up_epoch if epoch <= args.warm_up_epoch else \
     0.5 * (math.cos((epoch - args.warm_up_epoch) / (args.max_epoch - args.warm_up_epoch) * math.pi) + 1)
 scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=warm_up_with_cosine_lr)
-
-# lr_multipliers = [0.1, 0.2, 0.25, 1.0, 1.0, 1.0]
 
 
 def adjust_lr(optimizer, batch_idx, lrs):
