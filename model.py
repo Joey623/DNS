@@ -89,7 +89,6 @@ class HSS(nn.Module):
 
 
 # Common Space Shifting (CSS)
-# contribution2
 class CSS(nn.Module):
     def __init__(self, inp=2048, oup=2048, reduction=4):
         super(CSS, self).__init__()
@@ -203,13 +202,10 @@ class DD(nn.Module):
         self.KLDivLoss = nn.KLDivLoss(reduction='batchmean')
         self.ID = nn.CrossEntropyLoss()
         self.tau = tau
-        # C
         self.visible_classifier = nn.Linear(pool_dim, class_num, bias=False)
         self.infrared_classifier = nn.Linear(pool_dim, class_num, bias=False)
         self.visible_classifier_ = nn.Linear(pool_dim, class_num, bias=False)
         self.visible_classifier_.weight.requires_grad_(False)
-        # initial
-        # W^t= C^t
         self.visible_classifier_.weight.data = self.visible_classifier.weight.data
         self.infrared_classifier_ = nn.Linear(pool_dim, class_num, bias=False)
         self.infrared_classifier_.weight.requires_grad_(False)
@@ -220,15 +216,11 @@ class DD(nn.Module):
         b, c = x.shape
         x_v = self.visible_classifier(x[:b // 2])
         x_t = self.infrared_classifier(x[b // 2:])
-        # Z^t
-        # to capture shared cues
         logit_x_id = [x_v, x_t]
         logit_x = torch.cat((x_v, x_t), 0).float()
 
-        # to calculate dd2, omit in paper
         x_hat_v = self.visible_classifier(x_hat[:b // 2])
         x_hat_t = self.infrared_classifier(x_hat[b // 2:])
-        # Z_hat^t
         logit_x_hat_id = [x_hat_v, x_hat_t]
         logit_x_hat = torch.cat((x_hat_v, x_hat_t), 0).float()
 
@@ -239,16 +231,15 @@ class DD(nn.Module):
             self.visible_classifier_.weight.data = self.visible_classifier_.weight.data * (1 - self.tau) \
                                                    + self.visible_classifier.weight.data * self.tau
 
-            # update A, eq 14
             logit_a_v = self.infrared_classifier_(x[:b // 2])
             logit_a_t = self.visible_classifier_(x[b // 2:])
-            # in supplementary material
+
             logit_a_hat_v = self.infrared_classifier_(x_hat[:b // 2])
             logit_a_hat_t = self.visible_classifier_(x_hat[b // 2:])
 
             logit_a = torch.cat((logit_a_v, logit_a_t), 0).float()
             logit_a_hat = torch.cat((logit_a_hat_v, logit_a_hat_t), 0).float()
-        # softmax
+
         logit_x = F.softmax(logit_x, 1)
         logit_x_hat = F.softmax(logit_x_hat, 1)
         logit_a = F.softmax(logit_a, 1)
@@ -315,17 +306,17 @@ class embed_net(nn.Module):
             # Z in papers
             x = self.pool(x)
 
-            # calculate the da loss
+
             da_loss = self.DA(x, x_hat)
 
             x_after_BN = self.bottleneck(x)
-            # calculate the id loss
+
             cls_id = self.classifier(x_after_BN)
             dd_loss = self.DD(x_after_BN, x_hat, label1, label2)
 
             return {
-                'cls_id': cls_id,  # calculate id loss
-                'feat': x_after_BN,  # calculate circle loss
+                'cls_id': cls_id,
+                'feat': x_after_BN,
                 'da': da_loss,
                 'dd': dd_loss,
             }
