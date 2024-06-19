@@ -25,10 +25,7 @@ import os
 
 parser = argparse.ArgumentParser(description='PyTorch Cross-Modality Training')
 # each changes
-parser.add_argument('--noticed', default='RegDB', type=str)
-
 parser.add_argument('--dataset', default='sysu', help='dataset name: regdb or sysu')
-# 0.00068
 parser.add_argument('--lr', default=0.2, type=float, help='learning rate, 0.00035 for adam, 0.0007for adamw')
 parser.add_argument('--model_path', default='save_model/', type=str,
                     help='model save path')
@@ -36,9 +33,7 @@ parser.add_argument('--save_epoch', default=1000, type=int,
                     metavar='s', help='save model every 10 epochs')
 parser.add_argument('--log_path', default='log/', type=str,
                     help='log save path')
-# parser.add_argument('--model_path', default='model/', type=str,
-#                     help='log save path')
-parser.add_argument('--workers', default=0, type=int, metavar='N',
+parser.add_argument('--workers', default=4, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
 parser.add_argument('--img_w', default=144, type=int,
                     metavar='imgw', help='img width')
@@ -85,18 +80,12 @@ if dataset == 'sysu':
 elif dataset == 'regdb':
     data_path = "./autodl-tmp/RegDB/"
     log_path = args.log_path + 'regdb_log/'
-    # visible to thermal
-    # test_mode = [2, 1]
     # thermal to visible
     test_mode = [1, 2]
 elif dataset == 'llcm':
     data_path = "./autodl-tmp/LLCM/"
     log_path = args.log_path + 'llcm_log/'
-    # T2V
     test_mode = [1, 2]
-    # V2T
-    # test_mode = [2, 1]
-
 suffix = dataset
 suffix = suffix + '_p{}_n{}_lr_{}_seed_{}'.format(args.batch_size, args.num_pos, args.lr, args.seed)
 
@@ -105,7 +94,6 @@ if dataset == 'regdb':
 if not os.path.isdir(log_path):
     os.makedirs(log_path)
 
-# noticed = args.noticed
 
 File_name = log_path + suffix + '.log'
 logging.basicConfig(level=logging.DEBUG, format='%(message)s', filename=File_name, filemode='a')
