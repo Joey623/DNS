@@ -21,7 +21,7 @@ Cross-modality person re-identification (ReID) is a challenging task that aims t
   DNS/
   ```
 
-* **Preprocess the SYSU-MM01 and LLCM **
+* **Preprocess the SYSU-MM01 and LLCM**
 
   ```
   python pre_process_sysu.py
