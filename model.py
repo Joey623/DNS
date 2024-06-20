@@ -197,7 +197,7 @@ class DA(nn.Module):
 
 # Domain Distillation
 class DD(nn.Module):
-    def __init__(self, class_num, pool_dim=2048, tau=0.0):
+    def __init__(self, class_num, pool_dim=2048, tau=0.2):
         super(DD, self).__init__()
         self.KLDivLoss = nn.KLDivLoss(reduction='batchmean')
         self.ID = nn.CrossEntropyLoss()
