@@ -100,9 +100,9 @@ class CSS(nn.Module):
             nn.LayerNorm(self.inp),
             nn.Linear(self.inp, self.inp * self.r),
             nn.GELU(),
-            nn.Dropout(0.),
+            nn.Dropout(0.01),
             nn.Linear(self.inp * self.r, self.oup),
-            nn.Dropout(0.)
+            nn.Dropout(0.01)
         )
 
     def forward(self, x):
