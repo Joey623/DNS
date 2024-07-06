@@ -17,7 +17,6 @@ from eval_metrics import eval_sysu, eval_regdb, eval_llcm
 from utils import *
 from model import embed_net
 from loss import PairCircle
-from re_rank import random_walk, k_reciprocal
 import logging
 import math
 from torch.cuda.amp import autocast, GradScaler
@@ -59,7 +58,6 @@ parser.add_argument('--pool_dim', default=2048)
 parser.add_argument('--decay_step', default=16)
 parser.add_argument('--warm_up_epoch', default=8, type=int)
 parser.add_argument('--max_epoch', default=100)
-parser.add_argument('--rerank', default='no', type=str)
 parser.add_argument('--dim', default=2048, type=int)
 parser.add_argument('--tta', default=False, type=bool)
 parser.add_argument('--lr_multipliers', default=[0.1, 0.2, 0.25, 1.0, 1.0, 1.0])
@@ -339,17 +337,9 @@ def test(epoch):
 
         start = time.time()
 
-        if args.rerank == 'r':
-            print('reranking.....')
-            distmat = random_walk(query_feat, gall_feat)
-            distmat_att = random_walk(query_feat_att, gall_feat_att)
-        elif args.rerank == 'k':
-            print('reranking.....')
-            distmat = k_reciprocal(query_feat, gall_feat)
-            distmat_att = k_reciprocal(query_feat_att, gall_feat_att)
-        else:
-            distmat = -np.matmul(query_feat, np.transpose(gall_feat))
-            distmat_att = -np.matmul(query_feat_att, np.transpose(gall_feat_att))
+
+        distmat = -np.matmul(query_feat, np.transpose(gall_feat))
+        distmat_att = -np.matmul(query_feat_att, np.transpose(gall_feat_att))
 
         # evaluation
         if dataset == 'regdb':
