@@ -27,7 +27,7 @@ class h_swish(nn.Module):
     def forward(self, x):
         return x * self.sigmoid(x)
 
-
+# Distribution Shifting
 class Shift(nn.Module):
     def __init__(self, mode='max'):
         super(Shift, self).__init__()
@@ -132,6 +132,8 @@ class visible_module(nn.Module):
         super(visible_module, self).__init__()
         model_v = resnet50(pretrained=True, last_conv_stride=1, last_conv_dilation=1)
         self.visible = model_v
+        self.visible.layer3 = None
+        self.visible.layer4 = None
 
     def forward(self, x):
         x = self.visible.conv1(x)
@@ -150,6 +152,8 @@ class thermal_module(nn.Module):
         model_t = resnet50(pretrained=True, last_conv_stride=1, last_conv_dilation=1)
 
         self.thermal = model_t
+        self.thermal.layer3 = None
+        self.thermal.layer4 = None
 
     def forward(self, x):
         x = self.thermal.conv1(x)
@@ -167,6 +171,12 @@ class base_module(nn.Module):
         base = resnet50(pretrained=True, last_conv_stride=1, last_conv_dilation=1)
 
         self.base = base
+        self.base.conv1 = None
+        self.base.bn1 = None
+        self.base.relu = None
+        self.base.maxpool = None
+        self.layer1 = None
+        self.layer2 = None
         self.HSS3 = HSS(1024, 1024)
         self.HSS4 = HSS(2048, 2048)
 
