@@ -60,6 +60,16 @@ Cross-modality person re-identification (ReID) is a challenging task that aims t
   python test.py --dataset llcm --resume llcm_p6_n4_lr_0.2_seed_0_best.pth --tvsearch 1
   ```
 
+* New Tutorial
+
+  I found that setting args.max_epoch to 80 has no impact on performance, but it can save 20% of training time. So if you wanna faster training, you can run the following command:
+
+  ```
+  python train.py --dataset sysu --lr 0.2 --max_epoch=80
+  ```
+
+  Please note that this is optional, and you can also keep in touch with me by setting max_epoch to 100.
+
 # Acknowledgements
 
 This code is built on [CAJ](https://github.com/mangye16/Cross-Modal-Re-ID-baseline/tree/master/ICCV21_CAJ), [DEEN](https://github.com/ZYK100/LLCM), and [ffcv-imagenet](https://github.com/libffcv/ffcv-imagenet), we thank the authors for opensourcing their code!
