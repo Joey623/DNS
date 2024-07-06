@@ -68,7 +68,7 @@ Cross-modality person re-identification (ReID) is a challenging task that aims t
   python train.py --dataset sysu --lr 0.2 --max_epoch=80
   ```
 
-  Please note that this is optional, and you can also keep in touch with me by setting max_epoch to 100.
+  Please note that this is optional, and you can also keep in touch with me by setting max_epoch to 100. The corresponding log is provided in [here](./log/sysu_p6_n4_lr_0.2_seed_0_epoch80&150.log).
 
 # Acknowledgements
 
