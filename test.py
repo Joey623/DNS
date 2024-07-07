@@ -247,8 +247,8 @@ elif args.dataset == 'llcm':
         distmat = -np.matmul(query_feat, np.transpose(gall_feat))
         distmat_att = -np.matmul(query_feat_att, np.transpose(gall_feat_att))
 
-        cmc, mAP, mINP = eval_sysu(distmat, query_label, gall_label, query_cam, gall_cam)
-        cmc_att, mAP_att, mINP_att = eval_sysu(distmat_att, query_label, gall_label, query_cam, gall_cam)
+        cmc, mAP, mINP = eval_llcm(distmat, query_label, gall_label, query_cam, gall_cam)
+        cmc_att, mAP_att, mINP_att = eval_llcm(distmat_att, query_label, gall_label, query_cam, gall_cam)
 
         if trial == 0:
 
