@@ -44,17 +44,16 @@ parser.add_argument('--num_pos', default=4, type=int,
                     help='num of pos per identity in each modality')
 parser.add_argument('--test-batch', default=64, type=int,
                     metavar='tb', help='testing batch size')
-parser.add_argument('--margin', default=0.5, type=float,
-                    metavar='margin', help='triplet loss margin')
-
+parser.add_argument('--margin', default=0.45, type=float,
+                    metavar='margin', help='circle loss margin')
+parser.add_argument('--gamma', default=64, type=int,
+                    metavar='gamma', help='circle loss gamma')
 parser.add_argument('--trial', default=1, type=int, help='trial (only for RegDB dataset)')
-
 parser.add_argument('--seed', default=0, type=int,
                     metavar='t', help='random seed')
 parser.add_argument('--mode', default='all', type=str, help='all or indoor')
 parser.add_argument('--gpu', default='0,1,2,3', type=str,
                     help='gpu device ids for CUDA_VISIBLE_DEVICES')
-parser.add_argument('--pool_dim', default=2048)
 parser.add_argument('--decay_step', default=16)
 parser.add_argument('--warm_up_epoch', default=8, type=int)
 parser.add_argument('--max_epoch', default=100)
@@ -174,8 +173,7 @@ cudnn.benchmark = True
 
 criterion_id = nn.CrossEntropyLoss()
 # margin=0.45, gamma=64
-criterion_cir = PairCircle(margin=0.45, gamma=64)
-# criterion_tri = OriTripletLoss(margin=0.3)
+criterion_cir = PairCircle(margin=args.margin, gamma=args.gamma)
 
 criterion_id.to(device)
 criterion_cir.to(device)
@@ -197,6 +195,8 @@ optimizer = optim.SGD([{'params': base_params, 'lr': 0.1 * args.lr},
                        ],
                       weight_decay=5e-4, momentum=0.9, nesterov=True)
 
+# warmup strategy.
+# Linear Warmup for 0-7 epochs, Cosine Warmup for 8-15 epochs
 warm_up_with_cosine_lr = lambda epoch: epoch / args.warm_up_epoch if epoch <= args.warm_up_epoch else \
     0.5 * (math.cos((epoch - args.warm_up_epoch) / (args.max_epoch - args.warm_up_epoch) * math.pi) + 1)
 scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=warm_up_with_cosine_lr)
