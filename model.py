@@ -307,7 +307,7 @@ class embed_net(nn.Module):
             b, c, h, w = x.shape
             x_hat = self.gap(x)
             x_hat = x_hat.view(b, -1)
-            # Z_hat in papers
+            # Z_hat in the paper
             x_hat = self.CSS(x_hat)
 
             # all value must > 0 due to the GeMP
@@ -333,8 +333,8 @@ class embed_net(nn.Module):
 
         else:
             x = self.base(x)
+            # in the testing phase, the CSS is removed.
             b, c, h, w = x.shape
-
             x = self.relu(x)
             x = x.view(b, c, h * w)
             x = self.pool(x)
