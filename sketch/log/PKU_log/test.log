@@ -1,4 +1,0 @@
-==========
-Args:Namespace(noticed='test', dataset='pku', lr=0.0009, model_path='save_model/', save_epoch=1000, log_path='log/', workers=4, img_w=144, img_h=288, batch_size=8, num_pos=1, test_batch=8, margin=0.5, trial=1, seed=0, mode='all', gpu='0,1,2,3', pool_dim=2048, decay_step=16, warm_up_epoch=8, max_epoch=100, rerank='no', dim=2048, augc=0, rande=0)
-==========
-==> Loading data..
