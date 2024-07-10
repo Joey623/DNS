@@ -15,9 +15,8 @@ from data_loader import PKUdata, TestData
 from data_manager import *
 from eval_metrics import eval_pku
 from utils import *
-from model_resnet import embed_net
-from loss import PairCircle, DCL, MSEL, CenterLoss, OriTripletLoss
-from re_rank import random_walk, k_reciprocal
+from model import embed_net
+from loss import PairCircle
 import logging
 import math
 from torch.cuda.amp import autocast, GradScaler
@@ -28,16 +27,13 @@ import torch
 import torch.distributed as dist
 import torch.nn as nn
 import torch.optim as optim
-import torch.multiprocessing as mp
 
-from torch.nn.parallel import DistributedDataParallel as DDP
 
 parser = argparse.ArgumentParser(description='PyTorch Cross-Modality Training')
 # each changes
 parser.add_argument('--noticed', default='test', type=str)
 
 parser.add_argument('--dataset', default='pku', help='dataset name: regdb or sysu')
-# 0.00068
 parser.add_argument('--lr', default=0.0009, type=float, help='learning rate, 0.00035 for adam, 0.0007for adamw')
 parser.add_argument('--model_path', default='save_model/', type=str,
                     help='model save path')
@@ -45,8 +41,6 @@ parser.add_argument('--save_epoch', default=1000, type=int,
                     metavar='s', help='save model every 10 epochs')
 parser.add_argument('--log_path', default='log/', type=str,
                     help='log save path')
-# parser.add_argument('--model_path', default='model/', type=str,
-#                     help='log save path')
 parser.add_argument('--workers', default=4, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
 parser.add_argument('--img_w', default=144, type=int,
@@ -57,14 +51,12 @@ parser.add_argument('--batch-size', default=8, type=int,
                     metavar='B', help='training batch size')
 parser.add_argument('--num_pos', default=1, type=int,
                     help='num of pos per identity in each modality')
-parser.add_argument('--test-batch', default=8, type=int,
+parser.add_argument('--test-batch', default=16, type=int,
                     metavar='tb', help='testing batch size')
 parser.add_argument('--margin', default=0.5, type=float,
                     metavar='margin', help='triplet loss margin')
-
 parser.add_argument('--trial', default=1, type=int,
-                    metavar='t', help='trial (only for RegDB dataset)')
-
+                    metavar='t', help='trial for PKU dataset')
 parser.add_argument('--seed', default=0, type=int,
                     metavar='t', help='random seed')
 parser.add_argument('--mode', default='all', type=str, help='all or indoor')
@@ -76,26 +68,30 @@ parser.add_argument('--warm_up_epoch', default=8, type=int)
 parser.add_argument('--max_epoch', default=100)
 parser.add_argument('--rerank', default='no', type=str)
 parser.add_argument('--dim', default=2048, type=int)
-parser.add_argument('--augc', default=0, type=int,
-                    metavar='aug', help='use channel aug or not')  ##默认0
-parser.add_argument('--rande', default=0, type=float,
-                    metavar='ra', help='use random erasing or not and the probability')
 
-args = parser.parse_args(args=[])
+
+args = parser.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 set_seed(args.seed)
 
 dataset = args.dataset
 model_path = args.model_path + dataset + '/'
+if not os.path.isdir(model_path):
+    os.makedirs(model_path)
+
 if dataset == 'pku':
-    data_path = '../autodl-tmp/PKU_sketch/'
+    data_path = './PKU_sketch/'
     log_path = args.log_path + 'PKU_log/'
     test_mode = [1, 2]
 
 if not os.path.isdir(log_path):
     os.makedirs(log_path)
 
-suffix = args.noticed
+suffix = dataset
+suffix = suffix + '_p{}_n{}_lr_{}_seed_{}'.format(args.batch_size, args.num_pos, args.lr, args.seed)
+if dataset == 'pku':
+    suffix = suffix + '_trial_{}'.format(args.trial)
+
 
 File_name = log_path + suffix + '.log'
 logging.basicConfig(level=logging.DEBUG, format='%(message)s', filename=File_name, filemode='a')
@@ -168,22 +164,9 @@ criterion_cir = PairCircle(margin=0.45, gamma=64)
 criterion_id.to(device)
 criterion_cir.to(device)
 
-# ignored_params = list(map(id, net.bottleneck.parameters())) \
-#                  + list(map(id, net.classifier.parameters())) \
-#                  + list(map(id, net.DD.parameters())) \
-#                  + list(map(id, net.base.base.layer3.parameters())) \
-#                  + list(map(id, net.base.base.layer4.parameters()))
-#
-# base_params = filter(lambda p: id(p) not in ignored_params, net.parameters())
-#
-# optimizer = optim.SGD([{'params': base_params, 'lr': 0.1 * args.lr},
-#                        {'params': net.base.base.layer3.parameters(), 'lr': args.lr},
-#                        {'params': net.base.base.layer4.parameters(), 'lr': args.lr},
-#                        {'params': net.bottleneck.parameters(), 'lr': args.lr},
-#                        {'params': net.classifier.parameters(), 'lr': args.lr},
-#                        {'params': net.DD.parameters(), 'lr': args.lr*0.1},
-#                        ],
-#                       weight_decay=5e-4, momentum=0.9, nesterov=True)
+
+
+
 ignored_params = list(map(id, net.bottleneck.parameters())) \
                  + list(map(id, net.classifier.parameters())) \
                  + list(map(id, net.DD.parameters())) \
@@ -206,7 +189,7 @@ warm_up_with_cosine_lr = lambda epoch: epoch / args.warm_up_epoch if epoch <= ar
     0.5 * (math.cos((epoch - args.warm_up_epoch) / (args.max_epoch - args.warm_up_epoch) * math.pi) + 1)
 scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=warm_up_with_cosine_lr)
 
-lr_multipliers = [0.1, 0.5, 0.5, 1, 1, 1]
+lr_multipliers = [0.1, 0.5, 0.5, 1.0, 1.0, 1.0]
 
 
 def adjust_lr(optimizer, batch_idx, lrs):
@@ -341,17 +324,8 @@ def test(epoch):
 
         start = time.time()
 
-        if args.rerank == 'r':
-            print('reranking.....')
-            distmat = random_walk(query_feat, gall_feat)
-            distmat_att = random_walk(query_feat_att, gall_feat_att)
-        elif args.rerank == 'k':
-            print('reranking.....')
-            distmat = k_reciprocal(query_feat, gall_feat)
-            distmat_att = k_reciprocal(query_feat_att, gall_feat_att)
-        else:
-            distmat = -np.matmul(query_feat, np.transpose(gall_feat))
-            distmat_att = -np.matmul(query_feat_att, np.transpose(gall_feat_att))
+        distmat = -np.matmul(query_feat, np.transpose(gall_feat))
+        distmat_att = -np.matmul(query_feat_att, np.transpose(gall_feat_att))
 
         # evaluation
         if dataset == 'pku':
@@ -391,16 +365,17 @@ for epoch in range(start_epoch, args.max_epoch):
 
         # testing
         cmc, mAP, mINP, cmc_att, mAP_att, mINP_att = test(epoch)
-        curacc = cmc[0]
-        if cmc_att[0] > curacc:
-            curacc = cmc_att[0]
-        if curacc > best_acc:
-            best_acc = curacc
+        if cmc_att[0] > best_acc: # not the real best
+            best_acc = cmc_att[0]
             best_epoch = epoch
-            state = net.state_dict()
-
-        # if epoch == 99:
-        #     torch.save(state, model_path + 'epoch{}.pth'.format(best_epoch))
+            state = {
+                'net': net.state_dict(),
+                'cmc': cmc_att,
+                'mAP': mAP_att,
+                'mINP': mINP_att,
+                'epoch': epoch,
+            }
+            torch.save(state, model_path + suffix + '_best.pth')
 
         logging.info(
             'original feature:   Rank-1: {:.2%} | Rank-5: {:.2%} | Rank-10: {:.2%}| Rank-20: {:.2%}| mAP: {:.2%}| mINP: {:.2%}'.format(
