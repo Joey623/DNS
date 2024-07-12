@@ -182,7 +182,7 @@ optimizer = optim.AdamW([{'params': base_params, 'lr': 0.1 * args.lr},
                        {'params': net.classifier.parameters(), 'lr': args.lr},
                        {'params': net.DD.parameters(), 'lr': args.lr},
                        ],
-                      weight_decay=0.02)
+                      weight_decay=0.01)
 
 
 warm_up_with_cosine_lr = lambda epoch: epoch / args.warm_up_epoch if epoch <= args.warm_up_epoch else \
@@ -365,7 +365,7 @@ for epoch in range(start_epoch, args.max_epoch):
 
         # testing
         cmc, mAP, mINP, cmc_att, mAP_att, mINP_att = test(epoch)
-        if cmc_att[0] > best_acc: # not the real best
+        if cmc_att[0] >= best_acc: # not the real best
             best_acc = cmc_att[0]
             best_epoch = epoch
             state = {
