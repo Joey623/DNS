@@ -1,0 +1,608 @@
+==========
+Args:Namespace(batch_size=8, dataset='pku', decay_step=16, dim=2048, gpu='0,1,2,3', img_h=288, img_w=144, log_path='log/', lr=0.0009, margin=0.5, max_epoch=100, mode='all', model_path='save_model/', noticed='test', num_pos=1, pool_dim=2048, rerank='no', save_epoch=1000, seed=0, test_batch=16, trial=1, warm_up_epoch=8, workers=4)
+==========
+==> Loading data..
+data init success!
+==> Building model..
+==> Building success!..
+==> Start Training...
+==> Preparing Data Loader...
+Epoch: [0][0/37] Time: 2.378 (2.378) lr:0.000055 base_lr:0.000005Loss: 14.5253 (14.5253) iLoss: 5.0198 (5.0198) CLoss: 3.7104 (3.7104) da_loss: 1.3922 (1.3922) dd_loss: 5.5167 (5.5167) Accu: 0.00
+Test Epoch: 0
+original feature:   Rank-1: 18.00% | Rank-5: 36.00% | Rank-10: 50.00%| Rank-20: 74.00%| mAP: 18.63%| mINP: 8.03%
+feature after BN:   Rank-1: 18.00% | Rank-5: 36.00% | Rank-10: 58.00%| Rank-20: 78.00%| mAP: 21.20%| mINP: 13.39%
+Best Epoch [0]
+==> Preparing Data Loader...
+Epoch: [1][0/37] Time: 0.347 (0.347) lr:0.000111 base_lr:0.000011Loss: 13.1664 (13.1664) iLoss: 4.9202 (4.9202) CLoss: 2.6679 (2.6679) da_loss: 1.0198 (1.0198) dd_loss: 5.3744 (5.3744) Accu: 31.25
+Test Epoch: 1
+original feature:   Rank-1: 26.00% | Rank-5: 56.00% | Rank-10: 74.00%| Rank-20: 86.00%| mAP: 30.99%| mINP: 20.17%
+feature after BN:   Rank-1: 24.00% | Rank-5: 64.00% | Rank-10: 80.00%| Rank-20: 88.00%| mAP: 34.57%| mINP: 27.44%
+Best Epoch [1]
+==> Preparing Data Loader...
+Epoch: [2][0/37] Time: 0.354 (0.354) lr:0.000167 base_lr:0.000017Loss: 11.2296 (11.2296) iLoss: 4.5300 (4.5300) CLoss: 1.4850 (1.4850) da_loss: 0.8930 (0.8930) dd_loss: 5.0359 (5.0359) Accu: 37.50
+Test Epoch: 2
+original feature:   Rank-1: 40.00% | Rank-5: 76.00% | Rank-10: 82.00%| Rank-20: 88.00%| mAP: 43.12%| mINP: 31.78%
+feature after BN:   Rank-1: 38.00% | Rank-5: 74.00% | Rank-10: 80.00%| Rank-20: 96.00%| mAP: 43.11%| mINP: 33.65%
+Best Epoch [2]
+==> Preparing Data Loader...
+Epoch: [3][0/37] Time: 0.355 (0.355) lr:0.000224 base_lr:0.000022Loss: 8.0973 (8.0973) iLoss: 3.4380 (3.4380) CLoss: 0.2395 (0.2395) da_loss: 0.7216 (0.7216) dd_loss: 4.2755 (4.2755) Accu: 31.25
+Test Epoch: 3
+original feature:   Rank-1: 46.00% | Rank-5: 82.00% | Rank-10: 92.00%| Rank-20: 100.00%| mAP: 50.22%| mINP: 40.22%
+feature after BN:   Rank-1: 46.00% | Rank-5: 86.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 52.95%| mINP: 42.42%
+Best Epoch [3]
+==> Preparing Data Loader...
+Epoch: [4][0/37] Time: 0.350 (0.350) lr:0.000280 base_lr:0.000028Loss: 7.0560 (7.0560) iLoss: 2.7498 (2.7498) CLoss: 0.3036 (0.3036) da_loss: 0.7025 (0.7025) dd_loss: 3.8621 (3.8621) Accu: 56.25
+Test Epoch: 4
+original feature:   Rank-1: 48.00% | Rank-5: 82.00% | Rank-10: 90.00%| Rank-20: 96.00%| mAP: 55.21%| mINP: 48.35%
+feature after BN:   Rank-1: 52.00% | Rank-5: 88.00% | Rank-10: 96.00%| Rank-20: 98.00%| mAP: 57.73%| mINP: 49.23%
+Best Epoch [4]
+==> Preparing Data Loader...
+Epoch: [5][0/37] Time: 0.355 (0.355) lr:0.000336 base_lr:0.000034Loss: 5.3184 (5.3184) iLoss: 1.7230 (1.7230) CLoss: 0.1708 (0.1708) da_loss: 0.6291 (0.6291) dd_loss: 3.2988 (3.2988) Accu: 75.00
+Test Epoch: 5
+original feature:   Rank-1: 54.00% | Rank-5: 80.00% | Rank-10: 88.00%| Rank-20: 96.00%| mAP: 57.72%| mINP: 51.11%
+feature after BN:   Rank-1: 46.00% | Rank-5: 82.00% | Rank-10: 92.00%| Rank-20: 96.00%| mAP: 58.29%| mINP: 53.05%
+Best Epoch [4]
+==> Preparing Data Loader...
+Epoch: [6][0/37] Time: 0.263 (0.263) lr:0.000392 base_lr:0.000039Loss: 4.2996 (4.2996) iLoss: 0.9327 (0.9327) CLoss: 0.1346 (0.1346) da_loss: 0.6201 (0.6201) dd_loss: 3.1083 (3.1083) Accu: 87.50
+Test Epoch: 6
+original feature:   Rank-1: 58.00% | Rank-5: 88.00% | Rank-10: 96.00%| Rank-20: 98.00%| mAP: 62.65%| mINP: 55.91%
+feature after BN:   Rank-1: 60.00% | Rank-5: 90.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 65.00%| mINP: 58.12%
+Best Epoch [6]
+==> Preparing Data Loader...
+Epoch: [7][0/37] Time: 0.347 (0.347) lr:0.000449 base_lr:0.000045Loss: 3.5620 (3.5620) iLoss: 0.4041 (0.4041) CLoss: 0.0005 (0.0005) da_loss: 0.4962 (0.4962) dd_loss: 3.0581 (3.0581) Accu: 100.00
+Test Epoch: 7
+original feature:   Rank-1: 60.00% | Rank-5: 86.00% | Rank-10: 92.00%| Rank-20: 98.00%| mAP: 63.14%| mINP: 54.14%
+feature after BN:   Rank-1: 68.00% | Rank-5: 90.00% | Rank-10: 96.00%| Rank-20: 98.00%| mAP: 68.59%| mINP: 58.86%
+Best Epoch [7]
+==> Preparing Data Loader...
+Epoch: [8][0/37] Time: 0.339 (0.339) lr:0.000505 base_lr:0.000050Loss: 3.3765 (3.3765) iLoss: 0.2909 (0.2909) CLoss: 0.0039 (0.0039) da_loss: 0.5083 (0.5083) dd_loss: 2.9801 (2.9801) Accu: 100.00
+Test Epoch: 8
+original feature:   Rank-1: 60.00% | Rank-5: 86.00% | Rank-10: 96.00%| Rank-20: 100.00%| mAP: 61.65%| mINP: 51.41%
+feature after BN:   Rank-1: 64.00% | Rank-5: 92.00% | Rank-10: 96.00%| Rank-20: 98.00%| mAP: 65.87%| mINP: 55.36%
+Best Epoch [7]
+==> Preparing Data Loader...
+Epoch: [9][0/37] Time: 0.347 (0.347) lr:0.000561 base_lr:0.000056Loss: 3.4376 (3.4376) iLoss: 0.1025 (0.1025) CLoss: 0.0004 (0.0004) da_loss: 0.5522 (0.5522) dd_loss: 3.2242 (3.2242) Accu: 100.00
+Test Epoch: 9
+original feature:   Rank-1: 54.00% | Rank-5: 90.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 61.71%| mINP: 52.70%
+feature after BN:   Rank-1: 56.00% | Rank-5: 92.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 62.63%| mINP: 54.99%
+Best Epoch [7]
+==> Preparing Data Loader...
+Epoch: [10][0/37] Time: 0.336 (0.336) lr:0.000617 base_lr:0.000062Loss: 3.7145 (3.7145) iLoss: 0.2595 (0.2595) CLoss: 0.0027 (0.0027) da_loss: 0.5678 (0.5678) dd_loss: 3.3388 (3.3388) Accu: 100.00
+Test Epoch: 10
+original feature:   Rank-1: 66.00% | Rank-5: 96.00% | Rank-10: 96.00%| Rank-20: 100.00%| mAP: 67.61%| mINP: 57.06%
+feature after BN:   Rank-1: 76.00% | Rank-5: 96.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 74.98%| mINP: 65.26%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [11][0/37] Time: 0.341 (0.341) lr:0.000674 base_lr:0.000067Loss: 3.6383 (3.6383) iLoss: 0.1031 (0.1031) CLoss: 0.0001 (0.0001) da_loss: 0.5554 (0.5554) dd_loss: 3.4240 (3.4240) Accu: 100.00
+Test Epoch: 11
+original feature:   Rank-1: 50.00% | Rank-5: 80.00% | Rank-10: 88.00%| Rank-20: 100.00%| mAP: 54.52%| mINP: 45.86%
+feature after BN:   Rank-1: 58.00% | Rank-5: 80.00% | Rank-10: 90.00%| Rank-20: 98.00%| mAP: 59.82%| mINP: 51.50%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [12][0/37] Time: 0.321 (0.321) lr:0.000730 base_lr:0.000073Loss: 3.9331 (3.9331) iLoss: 0.1428 (0.1428) CLoss: 0.0082 (0.0082) da_loss: 0.6145 (0.6145) dd_loss: 3.6592 (3.6592) Accu: 100.00
+Test Epoch: 12
+original feature:   Rank-1: 62.00% | Rank-5: 90.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 59.10%| mINP: 45.75%
+feature after BN:   Rank-1: 58.00% | Rank-5: 90.00% | Rank-10: 96.00%| Rank-20: 100.00%| mAP: 60.58%| mINP: 50.45%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [13][0/37] Time: 0.334 (0.334) lr:0.000786 base_lr:0.000079Loss: 3.6734 (3.6734) iLoss: 0.0925 (0.0925) CLoss: 0.1773 (0.1773) da_loss: 0.6095 (0.6095) dd_loss: 3.2817 (3.2817) Accu: 100.00
+Test Epoch: 13
+original feature:   Rank-1: 52.00% | Rank-5: 80.00% | Rank-10: 96.00%| Rank-20: 98.00%| mAP: 56.35%| mINP: 46.47%
+feature after BN:   Rank-1: 56.00% | Rank-5: 90.00% | Rank-10: 96.00%| Rank-20: 96.00%| mAP: 57.06%| mINP: 44.95%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [14][0/37] Time: 0.338 (0.338) lr:0.000842 base_lr:0.000084Loss: 4.0035 (4.0035) iLoss: 0.4730 (0.4730) CLoss: 0.0258 (0.0258) da_loss: 0.5870 (0.5870) dd_loss: 3.3873 (3.3873) Accu: 93.75
+Test Epoch: 14
+original feature:   Rank-1: 48.00% | Rank-5: 82.00% | Rank-10: 88.00%| Rank-20: 98.00%| mAP: 51.80%| mINP: 40.73%
+feature after BN:   Rank-1: 42.00% | Rank-5: 84.00% | Rank-10: 90.00%| Rank-20: 100.00%| mAP: 51.84%| mINP: 43.30%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [15][0/37] Time: 0.344 (0.344) lr:0.000898 base_lr:0.000090Loss: 4.8184 (4.8184) iLoss: 0.5266 (0.5266) CLoss: 0.0205 (0.0205) da_loss: 0.6718 (0.6718) dd_loss: 4.1370 (4.1370) Accu: 81.25
+Test Epoch: 15
+original feature:   Rank-1: 60.00% | Rank-5: 90.00% | Rank-10: 90.00%| Rank-20: 96.00%| mAP: 62.73%| mINP: 52.60%
+feature after BN:   Rank-1: 62.00% | Rank-5: 88.00% | Rank-10: 94.00%| Rank-20: 98.00%| mAP: 62.33%| mINP: 50.92%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [16][0/37] Time: 0.353 (0.353) lr:0.000890 base_lr:0.000089Loss: 4.1168 (4.1168) iLoss: 0.4127 (0.4127) CLoss: 0.1204 (0.1204) da_loss: 0.6438 (0.6438) dd_loss: 3.4550 (3.4550) Accu: 93.75
+Test Epoch: 16
+original feature:   Rank-1: 60.00% | Rank-5: 88.00% | Rank-10: 94.00%| Rank-20: 100.00%| mAP: 64.42%| mINP: 57.45%
+feature after BN:   Rank-1: 68.00% | Rank-5: 86.00% | Rank-10: 96.00%| Rank-20: 98.00%| mAP: 68.91%| mINP: 61.68%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [17][0/37] Time: 0.345 (0.345) lr:0.000879 base_lr:0.000088Loss: 4.0764 (4.0764) iLoss: 0.0809 (0.0809) CLoss: 0.0001 (0.0001) da_loss: 0.6024 (0.6024) dd_loss: 3.8749 (3.8749) Accu: 100.00
+Test Epoch: 17
+original feature:   Rank-1: 68.00% | Rank-5: 94.00% | Rank-10: 96.00%| Rank-20: 96.00%| mAP: 65.33%| mINP: 53.59%
+feature after BN:   Rank-1: 72.00% | Rank-5: 92.00% | Rank-10: 96.00%| Rank-20: 98.00%| mAP: 68.88%| mINP: 57.31%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [18][0/37] Time: 0.340 (0.340) lr:0.000868 base_lr:0.000087Loss: 4.2111 (4.2111) iLoss: 0.2852 (0.2852) CLoss: 0.2432 (0.2432) da_loss: 0.6324 (0.6324) dd_loss: 3.5563 (3.5563) Accu: 93.75
+Test Epoch: 18
+original feature:   Rank-1: 60.00% | Rank-5: 84.00% | Rank-10: 94.00%| Rank-20: 98.00%| mAP: 61.65%| mINP: 52.67%
+feature after BN:   Rank-1: 62.00% | Rank-5: 84.00% | Rank-10: 92.00%| Rank-20: 98.00%| mAP: 62.20%| mINP: 52.80%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [19][0/37] Time: 0.268 (0.268) lr:0.000857 base_lr:0.000086Loss: 3.9164 (3.9164) iLoss: 0.0279 (0.0279) CLoss: 0.0391 (0.0391) da_loss: 0.5332 (0.5332) dd_loss: 3.7428 (3.7428) Accu: 100.00
+Test Epoch: 19
+original feature:   Rank-1: 68.00% | Rank-5: 86.00% | Rank-10: 96.00%| Rank-20: 100.00%| mAP: 66.27%| mINP: 56.47%
+feature after BN:   Rank-1: 68.00% | Rank-5: 86.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 66.48%| mINP: 56.56%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [20][0/37] Time: 0.346 (0.346) lr:0.000847 base_lr:0.000085Loss: 3.4440 (3.4440) iLoss: 0.0177 (0.0177) CLoss: 0.0016 (0.0016) da_loss: 0.5572 (0.5572) dd_loss: 3.3133 (3.3133) Accu: 100.00
+Test Epoch: 20
+original feature:   Rank-1: 68.00% | Rank-5: 90.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 68.12%| mINP: 59.74%
+feature after BN:   Rank-1: 68.00% | Rank-5: 88.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 68.66%| mINP: 60.35%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [21][0/37] Time: 0.339 (0.339) lr:0.000836 base_lr:0.000084Loss: 3.2474 (3.2474) iLoss: 0.0135 (0.0135) CLoss: 0.0009 (0.0009) da_loss: 0.5536 (0.5536) dd_loss: 3.1223 (3.1223) Accu: 100.00
+Test Epoch: 21
+original feature:   Rank-1: 62.00% | Rank-5: 94.00% | Rank-10: 94.00%| Rank-20: 98.00%| mAP: 67.29%| mINP: 61.30%
+feature after BN:   Rank-1: 62.00% | Rank-5: 90.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 69.85%| mINP: 64.00%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [22][0/37] Time: 0.340 (0.340) lr:0.000825 base_lr:0.000083Loss: 3.3727 (3.3727) iLoss: 0.0064 (0.0064) CLoss: 0.0000 (0.0000) da_loss: 0.5295 (0.5295) dd_loss: 3.2603 (3.2603) Accu: 100.00
+Test Epoch: 22
+original feature:   Rank-1: 72.00% | Rank-5: 88.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 72.10%| mINP: 64.24%
+feature after BN:   Rank-1: 72.00% | Rank-5: 92.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 72.86%| mINP: 65.52%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [23][0/37] Time: 0.334 (0.334) lr:0.000815 base_lr:0.000081Loss: 4.3284 (4.3284) iLoss: 0.1491 (0.1491) CLoss: 0.0035 (0.0035) da_loss: 0.5324 (0.5324) dd_loss: 4.0693 (4.0693) Accu: 93.75
+Test Epoch: 23
+original feature:   Rank-1: 68.00% | Rank-5: 88.00% | Rank-10: 96.00%| Rank-20: 96.00%| mAP: 67.23%| mINP: 57.78%
+feature after BN:   Rank-1: 66.00% | Rank-5: 86.00% | Rank-10: 96.00%| Rank-20: 98.00%| mAP: 67.63%| mINP: 59.50%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [24][0/37] Time: 0.339 (0.339) lr:0.000804 base_lr:0.000080Loss: 3.6301 (3.6301) iLoss: 0.0054 (0.0054) CLoss: 0.0000 (0.0000) da_loss: 0.5458 (0.5458) dd_loss: 3.5155 (3.5155) Accu: 100.00
+Test Epoch: 24
+original feature:   Rank-1: 62.00% | Rank-5: 86.00% | Rank-10: 90.00%| Rank-20: 98.00%| mAP: 62.62%| mINP: 53.75%
+feature after BN:   Rank-1: 64.00% | Rank-5: 88.00% | Rank-10: 92.00%| Rank-20: 96.00%| mAP: 64.94%| mINP: 57.25%
+Best Epoch [10]
+==> Preparing Data Loader...
+Epoch: [25][0/37] Time: 0.346 (0.346) lr:0.000793 base_lr:0.000079Loss: 3.2956 (3.2956) iLoss: 0.0098 (0.0098) CLoss: 0.0000 (0.0000) da_loss: 0.5217 (0.5217) dd_loss: 3.1814 (3.1814) Accu: 100.00
+Test Epoch: 25
+original feature:   Rank-1: 70.00% | Rank-5: 94.00% | Rank-10: 94.00%| Rank-20: 100.00%| mAP: 67.04%| mINP: 55.25%
+feature after BN:   Rank-1: 78.00% | Rank-5: 92.00% | Rank-10: 96.00%| Rank-20: 100.00%| mAP: 73.43%| mINP: 62.31%
+Best Epoch [25]
+==> Preparing Data Loader...
+Epoch: [26][0/37] Time: 0.336 (0.336) lr:0.000782 base_lr:0.000078Loss: 3.3602 (3.3602) iLoss: 0.0091 (0.0091) CLoss: 0.0000 (0.0000) da_loss: 0.5150 (0.5150) dd_loss: 3.2481 (3.2481) Accu: 100.00
+Test Epoch: 26
+original feature:   Rank-1: 74.00% | Rank-5: 90.00% | Rank-10: 94.00%| Rank-20: 100.00%| mAP: 71.02%| mINP: 61.16%
+feature after BN:   Rank-1: 76.00% | Rank-5: 86.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 75.42%| mINP: 68.58%
+Best Epoch [25]
+==> Preparing Data Loader...
+Epoch: [27][0/37] Time: 0.337 (0.337) lr:0.000772 base_lr:0.000077Loss: 3.2934 (3.2934) iLoss: 0.0110 (0.0110) CLoss: 0.0003 (0.0003) da_loss: 0.5416 (0.5416) dd_loss: 3.1738 (3.1738) Accu: 100.00
+Test Epoch: 27
+original feature:   Rank-1: 68.00% | Rank-5: 94.00% | Rank-10: 96.00%| Rank-20: 100.00%| mAP: 70.77%| mINP: 63.52%
+feature after BN:   Rank-1: 72.00% | Rank-5: 94.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 73.51%| mINP: 65.38%
+Best Epoch [25]
+==> Preparing Data Loader...
+Epoch: [28][0/37] Time: 0.250 (0.250) lr:0.000761 base_lr:0.000076Loss: 3.0097 (3.0097) iLoss: 0.0052 (0.0052) CLoss: 0.0000 (0.0000) da_loss: 0.4697 (0.4697) dd_loss: 2.9105 (2.9105) Accu: 100.00
+Test Epoch: 28
+original feature:   Rank-1: 70.00% | Rank-5: 92.00% | Rank-10: 98.00%| Rank-20: 98.00%| mAP: 72.43%| mINP: 65.31%
+feature after BN:   Rank-1: 70.00% | Rank-5: 92.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 73.14%| mINP: 66.91%
+Best Epoch [25]
+==> Preparing Data Loader...
+Epoch: [29][0/37] Time: 0.352 (0.352) lr:0.000750 base_lr:0.000075Loss: 3.1262 (3.1262) iLoss: 0.0071 (0.0071) CLoss: 0.0014 (0.0014) da_loss: 0.4800 (0.4800) dd_loss: 3.0216 (3.0216) Accu: 100.00
+Test Epoch: 29
+original feature:   Rank-1: 76.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.27%| mINP: 72.33%
+feature after BN:   Rank-1: 86.00% | Rank-5: 94.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.03%| mINP: 72.90%
+Best Epoch [29]
+==> Preparing Data Loader...
+Epoch: [30][0/37] Time: 0.346 (0.346) lr:0.000740 base_lr:0.000074Loss: 3.1959 (3.1959) iLoss: 0.0079 (0.0079) CLoss: 0.0000 (0.0000) da_loss: 0.4640 (0.4640) dd_loss: 3.0951 (3.0951) Accu: 100.00
+Test Epoch: 30
+original feature:   Rank-1: 74.00% | Rank-5: 92.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 76.62%| mINP: 71.59%
+feature after BN:   Rank-1: 78.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.91%| mINP: 68.57%
+Best Epoch [29]
+==> Preparing Data Loader...
+Epoch: [31][0/37] Time: 0.335 (0.335) lr:0.000729 base_lr:0.000073Loss: 3.3297 (3.3297) iLoss: 0.0118 (0.0118) CLoss: 0.0004 (0.0004) da_loss: 0.4507 (0.4507) dd_loss: 3.2274 (3.2274) Accu: 100.00
+Test Epoch: 31
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.91%| mINP: 75.57%
+feature after BN:   Rank-1: 86.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 82.47%| mINP: 74.07%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [32][0/37] Time: 0.350 (0.350) lr:0.000718 base_lr:0.000072Loss: 3.0341 (3.0341) iLoss: 0.0088 (0.0088) CLoss: 0.0000 (0.0000) da_loss: 0.4505 (0.4505) dd_loss: 2.9353 (2.9353) Accu: 100.00
+Test Epoch: 32
+original feature:   Rank-1: 76.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.44%| mINP: 71.64%
+feature after BN:   Rank-1: 74.00% | Rank-5: 96.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 76.52%| mINP: 69.97%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [33][0/37] Time: 0.351 (0.351) lr:0.000707 base_lr:0.000071Loss: 2.6479 (2.6479) iLoss: 0.0098 (0.0098) CLoss: 0.0000 (0.0000) da_loss: 0.4128 (0.4128) dd_loss: 2.5556 (2.5556) Accu: 100.00
+Test Epoch: 33
+original feature:   Rank-1: 72.00% | Rank-5: 94.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 74.86%| mINP: 67.39%
+feature after BN:   Rank-1: 74.00% | Rank-5: 94.00% | Rank-10: 96.00%| Rank-20: 100.00%| mAP: 74.54%| mINP: 65.97%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [34][0/37] Time: 0.357 (0.357) lr:0.000697 base_lr:0.000070Loss: 2.8639 (2.8639) iLoss: 0.0041 (0.0041) CLoss: 0.0000 (0.0000) da_loss: 0.4202 (0.4202) dd_loss: 2.7757 (2.7757) Accu: 100.00
+Test Epoch: 34
+original feature:   Rank-1: 72.00% | Rank-5: 92.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 73.03%| mINP: 65.53%
+feature after BN:   Rank-1: 72.00% | Rank-5: 96.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 75.67%| mINP: 69.46%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [35][0/37] Time: 0.347 (0.347) lr:0.000686 base_lr:0.000069Loss: 3.0497 (3.0497) iLoss: 0.0057 (0.0057) CLoss: 0.0000 (0.0000) da_loss: 0.4005 (0.4005) dd_loss: 2.9639 (2.9639) Accu: 100.00
+Test Epoch: 35
+original feature:   Rank-1: 70.00% | Rank-5: 94.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 71.08%| mINP: 63.39%
+feature after BN:   Rank-1: 78.00% | Rank-5: 96.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 76.21%| mINP: 66.33%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [36][0/37] Time: 0.342 (0.342) lr:0.000675 base_lr:0.000068Loss: 2.7861 (2.7861) iLoss: 0.0034 (0.0034) CLoss: 0.0000 (0.0000) da_loss: 0.3728 (0.3728) dd_loss: 2.7082 (2.7082) Accu: 100.00
+Test Epoch: 36
+original feature:   Rank-1: 74.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 74.24%| mINP: 64.78%
+feature after BN:   Rank-1: 80.00% | Rank-5: 94.00% | Rank-10: 96.00%| Rank-20: 100.00%| mAP: 76.47%| mINP: 67.03%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [37][0/37] Time: 0.349 (0.349) lr:0.000665 base_lr:0.000066Loss: 2.5836 (2.5836) iLoss: 0.0028 (0.0028) CLoss: 0.0000 (0.0000) da_loss: 0.3952 (0.3952) dd_loss: 2.5017 (2.5017) Accu: 100.00
+Test Epoch: 37
+original feature:   Rank-1: 76.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.81%| mINP: 67.94%
+feature after BN:   Rank-1: 78.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.36%| mINP: 67.53%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [38][0/37] Time: 0.339 (0.339) lr:0.000654 base_lr:0.000065Loss: 2.8554 (2.8554) iLoss: 0.0045 (0.0045) CLoss: 0.0001 (0.0001) da_loss: 0.4044 (0.4044) dd_loss: 2.7699 (2.7699) Accu: 100.00
+Test Epoch: 38
+original feature:   Rank-1: 68.00% | Rank-5: 92.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 74.43%| mINP: 67.95%
+feature after BN:   Rank-1: 78.00% | Rank-5: 96.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 76.79%| mINP: 67.22%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [39][0/37] Time: 0.343 (0.343) lr:0.000643 base_lr:0.000064Loss: 2.6527 (2.6527) iLoss: 0.0040 (0.0040) CLoss: 0.0000 (0.0000) da_loss: 0.3724 (0.3724) dd_loss: 2.5742 (2.5742) Accu: 100.00
+Test Epoch: 39
+original feature:   Rank-1: 72.00% | Rank-5: 94.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 73.50%| mINP: 64.60%
+feature after BN:   Rank-1: 74.00% | Rank-5: 96.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 74.63%| mINP: 66.05%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [40][0/37] Time: 0.340 (0.340) lr:0.000632 base_lr:0.000063Loss: 2.6840 (2.6840) iLoss: 0.0023 (0.0023) CLoss: 0.0000 (0.0000) da_loss: 0.3932 (0.3932) dd_loss: 2.6030 (2.6030) Accu: 100.00
+Test Epoch: 40
+original feature:   Rank-1: 88.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.75%| mINP: 68.40%
+feature after BN:   Rank-1: 84.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.85%| mINP: 68.41%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [41][0/37] Time: 0.344 (0.344) lr:0.000622 base_lr:0.000062Loss: 2.8198 (2.8198) iLoss: 0.0054 (0.0054) CLoss: 0.0000 (0.0000) da_loss: 0.3776 (0.3776) dd_loss: 2.7389 (2.7389) Accu: 100.00
+Test Epoch: 41
+original feature:   Rank-1: 78.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.12%| mINP: 71.67%
+feature after BN:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.78%| mINP: 73.44%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [42][0/37] Time: 0.340 (0.340) lr:0.000611 base_lr:0.000061Loss: 2.5946 (2.5946) iLoss: 0.0033 (0.0033) CLoss: 0.0000 (0.0000) da_loss: 0.3473 (0.3473) dd_loss: 2.5218 (2.5218) Accu: 100.00
+Test Epoch: 42
+original feature:   Rank-1: 72.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 74.88%| mINP: 69.24%
+feature after BN:   Rank-1: 82.00% | Rank-5: 94.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.58%| mINP: 66.01%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [43][0/37] Time: 0.361 (0.361) lr:0.000600 base_lr:0.000060Loss: 2.6260 (2.6260) iLoss: 0.0068 (0.0068) CLoss: 0.0000 (0.0000) da_loss: 0.4245 (0.4245) dd_loss: 2.5342 (2.5342) Accu: 100.00
+Test Epoch: 43
+original feature:   Rank-1: 74.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 75.57%| mINP: 68.55%
+feature after BN:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.02%| mINP: 71.44%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [44][0/37] Time: 0.357 (0.357) lr:0.000590 base_lr:0.000059Loss: 2.6023 (2.6023) iLoss: 0.0043 (0.0043) CLoss: 0.0000 (0.0000) da_loss: 0.3387 (0.3387) dd_loss: 2.5302 (2.5302) Accu: 100.00
+Test Epoch: 44
+original feature:   Rank-1: 78.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.88%| mINP: 70.86%
+feature after BN:   Rank-1: 80.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.82%| mINP: 70.57%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [45][0/37] Time: 0.340 (0.340) lr:0.000579 base_lr:0.000058Loss: 2.8829 (2.8829) iLoss: 0.0050 (0.0050) CLoss: 0.0000 (0.0000) da_loss: 0.3826 (0.3826) dd_loss: 2.8013 (2.8013) Accu: 100.00
+Test Epoch: 45
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.67%| mINP: 69.87%
+feature after BN:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.33%| mINP: 70.10%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [46][0/37] Time: 0.338 (0.338) lr:0.000568 base_lr:0.000057Loss: 2.5491 (2.5491) iLoss: 0.0044 (0.0044) CLoss: 0.0000 (0.0000) da_loss: 0.3496 (0.3496) dd_loss: 2.4748 (2.4748) Accu: 100.00
+Test Epoch: 46
+original feature:   Rank-1: 74.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 74.01%| mINP: 65.54%
+feature after BN:   Rank-1: 80.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.03%| mINP: 67.84%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [47][0/37] Time: 0.341 (0.341) lr:0.000557 base_lr:0.000056Loss: 2.4670 (2.4670) iLoss: 0.0018 (0.0018) CLoss: 0.0000 (0.0000) da_loss: 0.3298 (0.3298) dd_loss: 2.3992 (2.3992) Accu: 100.00
+Test Epoch: 47
+original feature:   Rank-1: 66.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 72.89%| mINP: 66.76%
+feature after BN:   Rank-1: 76.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 75.68%| mINP: 66.94%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [48][0/37] Time: 0.318 (0.318) lr:0.000547 base_lr:0.000055Loss: 2.2928 (2.2928) iLoss: 0.0022 (0.0022) CLoss: 0.0000 (0.0000) da_loss: 0.3073 (0.3073) dd_loss: 2.2291 (2.2291) Accu: 100.00
+Test Epoch: 48
+original feature:   Rank-1: 68.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 72.52%| mINP: 65.15%
+feature after BN:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.20%| mINP: 69.39%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [49][0/37] Time: 0.347 (0.347) lr:0.000536 base_lr:0.000054Loss: 2.6436 (2.6436) iLoss: 0.0044 (0.0044) CLoss: 0.0000 (0.0000) da_loss: 0.3431 (0.3431) dd_loss: 2.5705 (2.5705) Accu: 100.00
+Test Epoch: 49
+original feature:   Rank-1: 70.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 73.40%| mINP: 66.21%
+feature after BN:   Rank-1: 80.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.78%| mINP: 68.92%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [50][0/37] Time: 0.351 (0.351) lr:0.000525 base_lr:0.000053Loss: 2.4307 (2.4307) iLoss: 0.0023 (0.0023) CLoss: 0.0000 (0.0000) da_loss: 0.3459 (0.3459) dd_loss: 2.3592 (2.3592) Accu: 100.00
+Test Epoch: 50
+original feature:   Rank-1: 72.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 74.01%| mINP: 66.84%
+feature after BN:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.01%| mINP: 67.51%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [51][0/37] Time: 0.342 (0.342) lr:0.000515 base_lr:0.000051Loss: 2.4313 (2.4313) iLoss: 0.0044 (0.0044) CLoss: 0.0000 (0.0000) da_loss: 0.3634 (0.3634) dd_loss: 2.3541 (2.3541) Accu: 100.00
+Test Epoch: 51
+original feature:   Rank-1: 74.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.36%| mINP: 69.02%
+feature after BN:   Rank-1: 82.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.91%| mINP: 70.39%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [52][0/37] Time: 0.267 (0.267) lr:0.000504 base_lr:0.000050Loss: 2.4379 (2.4379) iLoss: 0.0019 (0.0019) CLoss: 0.0000 (0.0000) da_loss: 0.3324 (0.3324) dd_loss: 2.3695 (2.3695) Accu: 100.00
+Test Epoch: 52
+original feature:   Rank-1: 66.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 74.20%| mINP: 69.88%
+feature after BN:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.69%| mINP: 70.26%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [53][0/37] Time: 0.316 (0.316) lr:0.000493 base_lr:0.000049Loss: 2.5058 (2.5058) iLoss: 0.0059 (0.0059) CLoss: 0.0000 (0.0000) da_loss: 0.3152 (0.3152) dd_loss: 2.4368 (2.4368) Accu: 100.00
+Test Epoch: 53
+original feature:   Rank-1: 70.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.25%| mINP: 70.47%
+feature after BN:   Rank-1: 80.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.56%| mINP: 72.87%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [54][0/37] Time: 0.337 (0.337) lr:0.000482 base_lr:0.000048Loss: 2.3968 (2.3968) iLoss: 0.0029 (0.0029) CLoss: 0.0000 (0.0000) da_loss: 0.3161 (0.3161) dd_loss: 2.3307 (2.3307) Accu: 100.00
+Test Epoch: 54
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.49%| mINP: 68.74%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.53%| mINP: 70.71%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [55][0/37] Time: 0.335 (0.335) lr:0.000472 base_lr:0.000047Loss: 2.4196 (2.4196) iLoss: 0.0047 (0.0047) CLoss: 0.0000 (0.0000) da_loss: 0.3088 (0.3088) dd_loss: 2.3531 (2.3531) Accu: 100.00
+Test Epoch: 55
+original feature:   Rank-1: 76.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.07%| mINP: 69.23%
+feature after BN:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.99%| mINP: 73.39%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [56][0/37] Time: 0.334 (0.334) lr:0.000461 base_lr:0.000046Loss: 2.5507 (2.5507) iLoss: 0.0029 (0.0029) CLoss: 0.0000 (0.0000) da_loss: 0.3316 (0.3316) dd_loss: 2.4815 (2.4815) Accu: 100.00
+Test Epoch: 56
+original feature:   Rank-1: 76.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.46%| mINP: 68.25%
+feature after BN:   Rank-1: 84.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.77%| mINP: 71.48%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [57][0/37] Time: 0.331 (0.331) lr:0.000450 base_lr:0.000045Loss: 2.4572 (2.4572) iLoss: 0.0055 (0.0055) CLoss: 0.0000 (0.0000) da_loss: 0.3214 (0.3214) dd_loss: 2.3874 (2.3874) Accu: 100.00
+Test Epoch: 57
+original feature:   Rank-1: 74.00% | Rank-5: 94.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.68%| mINP: 70.55%
+feature after BN:   Rank-1: 80.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.73%| mINP: 70.84%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [58][0/37] Time: 0.338 (0.338) lr:0.000440 base_lr:0.000044Loss: 2.4164 (2.4164) iLoss: 0.0022 (0.0022) CLoss: 0.0000 (0.0000) da_loss: 0.3124 (0.3124) dd_loss: 2.3517 (2.3517) Accu: 100.00
+Test Epoch: 58
+original feature:   Rank-1: 72.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 75.32%| mINP: 68.04%
+feature after BN:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.78%| mINP: 70.64%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [59][0/37] Time: 0.337 (0.337) lr:0.000429 base_lr:0.000043Loss: 2.2376 (2.2376) iLoss: 0.0017 (0.0017) CLoss: 0.0000 (0.0000) da_loss: 0.2892 (0.2892) dd_loss: 2.1780 (2.1780) Accu: 100.00
+Test Epoch: 59
+original feature:   Rank-1: 74.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 76.61%| mINP: 70.50%
+feature after BN:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.66%| mINP: 69.47%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [60][0/37] Time: 0.338 (0.338) lr:0.000418 base_lr:0.000042Loss: 2.2779 (2.2779) iLoss: 0.0018 (0.0018) CLoss: 0.0000 (0.0000) da_loss: 0.2865 (0.2865) dd_loss: 2.2188 (2.2188) Accu: 100.00
+Test Epoch: 60
+original feature:   Rank-1: 70.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 75.06%| mINP: 69.16%
+feature after BN:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.21%| mINP: 70.48%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [61][0/37] Time: 0.340 (0.340) lr:0.000407 base_lr:0.000041Loss: 2.3356 (2.3356) iLoss: 0.0019 (0.0019) CLoss: 0.0000 (0.0000) da_loss: 0.3234 (0.3234) dd_loss: 2.2690 (2.2690) Accu: 100.00
+Test Epoch: 61
+original feature:   Rank-1: 72.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 75.42%| mINP: 69.04%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.62%| mINP: 69.69%
+Best Epoch [31]
+==> Preparing Data Loader...
+Epoch: [62][0/37] Time: 0.363 (0.363) lr:0.000397 base_lr:0.000040Loss: 2.3657 (2.3657) iLoss: 0.0025 (0.0025) CLoss: 0.0000 (0.0000) da_loss: 0.3470 (0.3470) dd_loss: 2.2938 (2.2938) Accu: 100.00
+Test Epoch: 62
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.94%| mINP: 71.73%
+feature after BN:   Rank-1: 86.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 82.24%| mINP: 73.53%
+Best Epoch [62]
+==> Preparing Data Loader...
+Epoch: [63][0/37] Time: 0.341 (0.341) lr:0.000386 base_lr:0.000039Loss: 2.2961 (2.2961) iLoss: 0.0029 (0.0029) CLoss: 0.0000 (0.0000) da_loss: 0.3063 (0.3063) dd_loss: 2.2319 (2.2319) Accu: 100.00
+Test Epoch: 63
+original feature:   Rank-1: 78.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.76%| mINP: 72.34%
+feature after BN:   Rank-1: 86.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 83.02%| mINP: 75.59%
+Best Epoch [63]
+==> Preparing Data Loader...
+Epoch: [64][0/37] Time: 0.291 (0.291) lr:0.000375 base_lr:0.000038Loss: 2.2816 (2.2816) iLoss: 0.0026 (0.0026) CLoss: 0.0000 (0.0000) da_loss: 0.3085 (0.3085) dd_loss: 2.2174 (2.2174) Accu: 100.00
+Test Epoch: 64
+original feature:   Rank-1: 72.00% | Rank-5: 96.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 77.92%| mINP: 73.11%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.43%| mINP: 71.61%
+Best Epoch [63]
+==> Preparing Data Loader...
+Epoch: [65][0/37] Time: 0.334 (0.334) lr:0.000365 base_lr:0.000036Loss: 2.2982 (2.2982) iLoss: 0.0022 (0.0022) CLoss: 0.0000 (0.0000) da_loss: 0.2764 (0.2764) dd_loss: 2.2407 (2.2407) Accu: 100.00
+Test Epoch: 65
+original feature:   Rank-1: 74.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.85%| mINP: 71.73%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.93%| mINP: 71.78%
+Best Epoch [63]
+==> Preparing Data Loader...
+Epoch: [66][0/37] Time: 0.277 (0.277) lr:0.000354 base_lr:0.000035Loss: 2.2935 (2.2935) iLoss: 0.0023 (0.0023) CLoss: 0.0000 (0.0000) da_loss: 0.3141 (0.3141) dd_loss: 2.2283 (2.2283) Accu: 100.00
+Test Epoch: 66
+original feature:   Rank-1: 74.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.30%| mINP: 70.80%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.47%| mINP: 71.19%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [67][0/37] Time: 0.341 (0.341) lr:0.000343 base_lr:0.000034Loss: 2.3168 (2.3168) iLoss: 0.0015 (0.0015) CLoss: 0.0000 (0.0000) da_loss: 0.2997 (0.2997) dd_loss: 2.2554 (2.2554) Accu: 100.00
+Test Epoch: 67
+original feature:   Rank-1: 76.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.79%| mINP: 70.37%
+feature after BN:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.79%| mINP: 72.83%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [68][0/37] Time: 0.342 (0.342) lr:0.000332 base_lr:0.000033Loss: 2.2052 (2.2052) iLoss: 0.0015 (0.0015) CLoss: 0.0000 (0.0000) da_loss: 0.2735 (0.2735) dd_loss: 2.1490 (2.1490) Accu: 100.00
+Test Epoch: 68
+original feature:   Rank-1: 72.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.05%| mINP: 70.69%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.75%| mINP: 72.25%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [69][0/37] Time: 0.300 (0.300) lr:0.000322 base_lr:0.000032Loss: 2.2121 (2.2121) iLoss: 0.0015 (0.0015) CLoss: 0.0000 (0.0000) da_loss: 0.2691 (0.2691) dd_loss: 2.1568 (2.1568) Accu: 100.00
+Test Epoch: 69
+original feature:   Rank-1: 76.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.98%| mINP: 69.93%
+feature after BN:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.01%| mINP: 71.16%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [70][0/37] Time: 0.338 (0.338) lr:0.000311 base_lr:0.000031Loss: 2.2707 (2.2707) iLoss: 0.0022 (0.0022) CLoss: 0.0000 (0.0000) da_loss: 0.2923 (0.2923) dd_loss: 2.2101 (2.2101) Accu: 100.00
+Test Epoch: 70
+original feature:   Rank-1: 74.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 75.59%| mINP: 68.42%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.40%| mINP: 70.85%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [71][0/37] Time: 0.340 (0.340) lr:0.000300 base_lr:0.000030Loss: 2.1901 (2.1901) iLoss: 0.0023 (0.0023) CLoss: 0.0000 (0.0000) da_loss: 0.2939 (0.2939) dd_loss: 2.1290 (2.1290) Accu: 100.00
+Test Epoch: 71
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.81%| mINP: 70.66%
+feature after BN:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.73%| mINP: 69.66%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [72][0/37] Time: 0.340 (0.340) lr:0.000290 base_lr:0.000029Loss: 2.2029 (2.2029) iLoss: 0.0021 (0.0021) CLoss: 0.0000 (0.0000) da_loss: 0.2872 (0.2872) dd_loss: 2.1434 (2.1434) Accu: 100.00
+Test Epoch: 72
+original feature:   Rank-1: 74.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 76.24%| mINP: 69.68%
+feature after BN:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.03%| mINP: 69.51%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [73][0/37] Time: 0.339 (0.339) lr:0.000279 base_lr:0.000028Loss: 2.2179 (2.2179) iLoss: 0.0016 (0.0016) CLoss: 0.0000 (0.0000) da_loss: 0.2841 (0.2841) dd_loss: 2.1595 (2.1595) Accu: 100.00
+Test Epoch: 73
+original feature:   Rank-1: 74.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.50%| mINP: 72.39%
+feature after BN:   Rank-1: 86.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.30%| mINP: 72.02%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [74][0/37] Time: 0.336 (0.336) lr:0.000268 base_lr:0.000027Loss: 2.2073 (2.2073) iLoss: 0.0022 (0.0022) CLoss: 0.0000 (0.0000) da_loss: 0.2955 (0.2955) dd_loss: 2.1461 (2.1461) Accu: 100.00
+Test Epoch: 74
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.42%| mINP: 71.28%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.20%| mINP: 72.48%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [75][0/37] Time: 0.338 (0.338) lr:0.000257 base_lr:0.000026Loss: 2.1784 (2.1784) iLoss: 0.0016 (0.0016) CLoss: 0.0000 (0.0000) da_loss: 0.2754 (0.2754) dd_loss: 2.1217 (2.1217) Accu: 100.00
+Test Epoch: 75
+original feature:   Rank-1: 74.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 77.82%| mINP: 72.65%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.91%| mINP: 71.83%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [76][0/37] Time: 0.341 (0.341) lr:0.000247 base_lr:0.000025Loss: 2.1298 (2.1298) iLoss: 0.0009 (0.0009) CLoss: 0.0000 (0.0000) da_loss: 0.2761 (0.2761) dd_loss: 2.0737 (2.0737) Accu: 100.00
+Test Epoch: 76
+original feature:   Rank-1: 74.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.21%| mINP: 72.98%
+feature after BN:   Rank-1: 86.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.87%| mINP: 72.73%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [77][0/37] Time: 0.255 (0.255) lr:0.000236 base_lr:0.000024Loss: 2.2095 (2.2095) iLoss: 0.0012 (0.0012) CLoss: 0.0000 (0.0000) da_loss: 0.2809 (0.2809) dd_loss: 2.1521 (2.1521) Accu: 100.00
+Test Epoch: 77
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.30%| mINP: 73.59%
+feature after BN:   Rank-1: 86.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 82.92%| mINP: 74.79%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [78][0/37] Time: 0.348 (0.348) lr:0.000225 base_lr:0.000023Loss: 2.2206 (2.2206) iLoss: 0.0018 (0.0018) CLoss: 0.0000 (0.0000) da_loss: 0.2847 (0.2847) dd_loss: 2.1619 (2.1619) Accu: 100.00
+Test Epoch: 78
+original feature:   Rank-1: 78.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.24%| mINP: 74.73%
+feature after BN:   Rank-1: 86.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 82.45%| mINP: 73.50%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [79][0/37] Time: 0.340 (0.340) lr:0.000215 base_lr:0.000021Loss: 2.1107 (2.1107) iLoss: 0.0013 (0.0013) CLoss: 0.0000 (0.0000) da_loss: 0.2765 (0.2765) dd_loss: 2.0542 (2.0542) Accu: 100.00
+Test Epoch: 79
+original feature:   Rank-1: 76.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 79.45%| mINP: 74.45%
+feature after BN:   Rank-1: 80.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.41%| mINP: 71.20%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [80][0/37] Time: 0.338 (0.338) lr:0.000204 base_lr:0.000020Loss: 2.2202 (2.2202) iLoss: 0.0026 (0.0026) CLoss: 0.0000 (0.0000) da_loss: 0.2991 (0.2991) dd_loss: 2.1578 (2.1578) Accu: 100.00
+Test Epoch: 80
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 78.62%| mINP: 71.89%
+feature after BN:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.57%| mINP: 73.53%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [81][0/37] Time: 0.368 (0.368) lr:0.000193 base_lr:0.000019Loss: 2.1788 (2.1788) iLoss: 0.0012 (0.0012) CLoss: 0.0000 (0.0000) da_loss: 0.2896 (0.2896) dd_loss: 2.1197 (2.1197) Accu: 100.00
+Test Epoch: 81
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 79.54%| mINP: 72.96%
+feature after BN:   Rank-1: 86.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.43%| mINP: 72.14%
+Best Epoch [66]
+==> Preparing Data Loader...
+Epoch: [82][0/37] Time: 0.341 (0.341) lr:0.000182 base_lr:0.000018Loss: 2.1724 (2.1724) iLoss: 0.0012 (0.0012) CLoss: 0.0000 (0.0000) da_loss: 0.2968 (0.2968) dd_loss: 2.1118 (2.1118) Accu: 100.00
+Test Epoch: 82
+original feature:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.83%| mINP: 74.68%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 82.81%| mINP: 73.49%
+Best Epoch [82]
+==> Preparing Data Loader...
+Epoch: [83][0/37] Time: 0.355 (0.355) lr:0.000172 base_lr:0.000017Loss: 2.2522 (2.2522) iLoss: 0.0022 (0.0022) CLoss: 0.0000 (0.0000) da_loss: 0.3067 (0.3067) dd_loss: 2.1887 (2.1887) Accu: 100.00
+Test Epoch: 83
+original feature:   Rank-1: 84.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 82.01%| mINP: 75.06%
+feature after BN:   Rank-1: 90.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 83.04%| mINP: 73.33%
+Best Epoch [83]
+==> Preparing Data Loader...
+Epoch: [84][0/37] Time: 0.300 (0.300) lr:0.000161 base_lr:0.000016Loss: 2.1303 (2.1303) iLoss: 0.0016 (0.0016) CLoss: 0.0000 (0.0000) da_loss: 0.2649 (0.2649) dd_loss: 2.0758 (2.0758) Accu: 100.00
+Test Epoch: 84
+original feature:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.55%| mINP: 72.94%
+feature after BN:   Rank-1: 86.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 82.55%| mINP: 74.52%
+Best Epoch [83]
+==> Preparing Data Loader...
+Epoch: [85][0/37] Time: 0.362 (0.362) lr:0.000150 base_lr:0.000015Loss: 2.1105 (2.1105) iLoss: 0.0010 (0.0010) CLoss: 0.0000 (0.0000) da_loss: 0.2823 (0.2823) dd_loss: 2.0530 (2.0530) Accu: 100.00
+Test Epoch: 85
+original feature:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.31%| mINP: 72.95%
+feature after BN:   Rank-1: 90.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 82.93%| mINP: 72.74%
+Best Epoch [85]
+==> Preparing Data Loader...
+Epoch: [86][0/37] Time: 0.347 (0.347) lr:0.000140 base_lr:0.000014Loss: 2.1600 (2.1600) iLoss: 0.0009 (0.0009) CLoss: 0.0000 (0.0000) da_loss: 0.2954 (0.2954) dd_loss: 2.1000 (2.1000) Accu: 100.00
+Test Epoch: 86
+original feature:   Rank-1: 82.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.84%| mINP: 73.79%
+feature after BN:   Rank-1: 86.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.58%| mINP: 72.25%
+Best Epoch [85]
+==> Preparing Data Loader...
+Epoch: [87][0/37] Time: 0.337 (0.337) lr:0.000129 base_lr:0.000013Loss: 2.1663 (2.1663) iLoss: 0.0014 (0.0014) CLoss: 0.0000 (0.0000) da_loss: 0.3053 (0.3053) dd_loss: 2.1039 (2.1039) Accu: 100.00
+Test Epoch: 87
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.78%| mINP: 74.35%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 83.20%| mINP: 74.67%
+Best Epoch [85]
+==> Preparing Data Loader...
+Epoch: [88][0/37] Time: 0.337 (0.337) lr:0.000118 base_lr:0.000012Loss: 2.2264 (2.2264) iLoss: 0.0016 (0.0016) CLoss: 0.0000 (0.0000) da_loss: 0.3041 (0.3041) dd_loss: 2.1640 (2.1640) Accu: 100.00
+Test Epoch: 88
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 81.12%| mINP: 75.67%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 84.64%| mINP: 77.50%
+Best Epoch [85]
+==> Preparing Data Loader...
+Epoch: [89][0/37] Time: 0.308 (0.308) lr:0.000107 base_lr:0.000011Loss: 2.1390 (2.1390) iLoss: 0.0011 (0.0011) CLoss: 0.0000 (0.0000) da_loss: 0.2746 (0.2746) dd_loss: 2.0831 (2.0831) Accu: 100.00
+Test Epoch: 89
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.84%| mINP: 74.45%
+feature after BN:   Rank-1: 90.00% | Rank-5: 96.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 83.98%| mINP: 75.38%
+Best Epoch [89]
+==> Preparing Data Loader...
+Epoch: [90][0/37] Time: 0.335 (0.335) lr:0.000097 base_lr:0.000010Loss: 2.1068 (2.1068) iLoss: 0.0012 (0.0012) CLoss: 0.0000 (0.0000) da_loss: 0.2742 (0.2742) dd_loss: 2.0508 (2.0508) Accu: 100.00
+Test Epoch: 90
+original feature:   Rank-1: 76.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.58%| mINP: 76.18%
+feature after BN:   Rank-1: 90.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 84.00%| mINP: 74.37%
+Best Epoch [90]
+==> Preparing Data Loader...
+Epoch: [91][0/37] Time: 0.354 (0.354) lr:0.000086 base_lr:0.000009Loss: 2.1464 (2.1464) iLoss: 0.0010 (0.0010) CLoss: 0.0000 (0.0000) da_loss: 0.3040 (0.3040) dd_loss: 2.0846 (2.0846) Accu: 100.00
+Test Epoch: 91
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.46%| mINP: 75.33%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 83.69%| mINP: 74.71%
+Best Epoch [90]
+==> Preparing Data Loader...
+Epoch: [92][0/37] Time: 0.336 (0.336) lr:0.000075 base_lr:0.000008Loss: 2.1217 (2.1217) iLoss: 0.0006 (0.0006) CLoss: 0.0000 (0.0000) da_loss: 0.2830 (0.2830) dd_loss: 2.0646 (2.0646) Accu: 100.00
+Test Epoch: 92
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.13%| mINP: 74.98%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 83.69%| mINP: 75.09%
+Best Epoch [90]
+==> Preparing Data Loader...
+Epoch: [93][0/37] Time: 0.356 (0.356) lr:0.000065 base_lr:0.000006Loss: 2.1639 (2.1639) iLoss: 0.0012 (0.0012) CLoss: 0.0000 (0.0000) da_loss: 0.2911 (0.2911) dd_loss: 2.1045 (2.1045) Accu: 100.00
+Test Epoch: 93
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.02%| mINP: 75.43%
+feature after BN:   Rank-1: 88.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 83.70%| mINP: 75.18%
+Best Epoch [90]
+==> Preparing Data Loader...
+Epoch: [94][0/37] Time: 0.242 (0.242) lr:0.000054 base_lr:0.000005Loss: 2.1398 (2.1398) iLoss: 0.0013 (0.0013) CLoss: 0.0000 (0.0000) da_loss: 0.2919 (0.2919) dd_loss: 2.0801 (2.0801) Accu: 100.00
+Test Epoch: 94
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 80.91%| mINP: 75.09%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 84.12%| mINP: 75.33%
+Best Epoch [90]
+==> Preparing Data Loader...
+Epoch: [95][0/37] Time: 0.343 (0.343) lr:0.000043 base_lr:0.000004Loss: 2.1578 (2.1578) iLoss: 0.0017 (0.0017) CLoss: 0.0000 (0.0000) da_loss: 0.2951 (0.2951) dd_loss: 2.0971 (2.0971) Accu: 100.00
+Test Epoch: 95
+original feature:   Rank-1: 76.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.66%| mINP: 76.40%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 83.63%| mINP: 75.19%
+Best Epoch [90]
+==> Preparing Data Loader...
+Epoch: [96][0/37] Time: 0.338 (0.338) lr:0.000032 base_lr:0.000003Loss: 2.1882 (2.1882) iLoss: 0.0009 (0.0009) CLoss: 0.0000 (0.0000) da_loss: 0.3055 (0.3055) dd_loss: 2.1262 (2.1262) Accu: 100.00
+Test Epoch: 96
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.10%| mINP: 74.92%
+feature after BN:   Rank-1: 86.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 84.05%| mINP: 77.02%
+Best Epoch [90]
+==> Preparing Data Loader...
+Epoch: [97][0/37] Time: 0.338 (0.338) lr:0.000022 base_lr:0.000002Loss: 2.1451 (2.1451) iLoss: 0.0007 (0.0007) CLoss: 0.0000 (0.0000) da_loss: 0.2920 (0.2920) dd_loss: 2.0860 (2.0860) Accu: 100.00
+Test Epoch: 97
+original feature:   Rank-1: 78.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.09%| mINP: 76.37%
+feature after BN:   Rank-1: 88.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 84.20%| mINP: 76.07%
+Best Epoch [90]
+==> Preparing Data Loader...
+Epoch: [98][0/37] Time: 0.335 (0.335) lr:0.000011 base_lr:0.000001Loss: 2.1595 (2.1595) iLoss: 0.0013 (0.0013) CLoss: 0.0000 (0.0000) da_loss: 0.2964 (0.2964) dd_loss: 2.0989 (2.0989) Accu: 100.00
+Test Epoch: 98
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 81.52%| mINP: 75.90%
+feature after BN:   Rank-1: 90.00% | Rank-5: 98.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 85.06%| mINP: 76.66%
+Best Epoch [98]
+==> Preparing Data Loader...
+Epoch: [99][0/37] Time: 0.296 (0.296) lr:0.000000 base_lr:0.000000Loss: 2.1796 (2.1796) iLoss: 0.0022 (0.0022) CLoss: 0.0000 (0.0000) da_loss: 0.3041 (0.3041) dd_loss: 2.1166 (2.1166) Accu: 100.00
+Test Epoch: 99
+original feature:   Rank-1: 80.00% | Rank-5: 98.00% | Rank-10: 98.00%| Rank-20: 100.00%| mAP: 80.33%| mINP: 73.14%
+feature after BN:   Rank-1: 86.00% | Rank-5: 100.00% | Rank-10: 100.00%| Rank-20: 100.00%| mAP: 84.31%| mINP: 77.45%
+Best Epoch [98]
