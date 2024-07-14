@@ -64,7 +64,7 @@ Cross-modality person re-identification (ReID) is a challenging task that aims t
   python test.py --dataset llcm --resume llcm_p6_n4_lr_0.2_seed_0_best.pth --tvsearch 1
   ```
 
-* New Tutorial
+* **New Tutorial**
 
   I found that setting `args.max_epoch` to 80 has no impact on performance, but it can save 20% of training time. So if you wanna faster training, you can run the following command:
 
@@ -72,11 +72,11 @@ Cross-modality person re-identification (ReID) is a challenging task that aims t
   python train.py --dataset sysu --lr 0.2 --max_epoch=80
   ```
 
-  Please note that this is optional, and you can also keep in touch with me by setting max_epoch to 100. The corresponding log is provided in [here](./log/sysu_p6_n4_lr_0.2_seed_0_epoch80&150.log).
+  Please note that this is optional, and you can also keep in touch with me by setting `max_epoch` to 100. The corresponding log (`max_epoch=80` and `max_epoch=150`) is provided in [here](./log/sysu_p6_n4_lr_0.2_seed_0_epoch80&150.log). I hope this can help you.
 
 ## Additional Comparison (Market-Sketch-1K Dataset)
 
-Due to my negligence, I did not notice the Market-Sketch-1k (mask1k) dataset during the submission. I discovered this issue when modifying camera-ready and urgently added relevant experiments. I cited this dataset in the camera-ready and added relevant experiments in the supplementary materials. For more information on the mask1k dataset, please refer to [paper](https://arxiv.org/pdf/2309.08372)and [official code](https://github.com/Lin-Kayla/subjectivity-sketch-reid).  Below is the comparison results. More information and corresponding codes can be found in [here](./mask1k/README.md) (`./mask1k/`).
+Due to my negligence, I did not notice the Market-Sketch-1k (mask1k) dataset during the submission as the DNS was completed in Sep. 2023. I discovered this issue when modifying camera-ready and urgently added relevant experiments. I cited this dataset in the camera-ready and added relevant experiments in the supplementary materials. For more information on the mask1k dataset, please refer to [paper](https://arxiv.org/pdf/2309.08372) and [official code](https://github.com/Lin-Kayla/subjectivity-sketch-reid).  Below is the comparison results. More information and corresponding codes about DNS in this dataset can be found in [here](./mask1k/README.md) (`./mask1k/`).
 
 ![experiments](./imgs/mask1k.png)
 
@@ -84,4 +84,4 @@ Due to my negligence, I did not notice the Market-Sketch-1k (mask1k) dataset dur
 
 # Acknowledgements
 
-This code is built on [CAJ](https://github.com/mangye16/Cross-Modal-Re-ID-baseline/tree/master/ICCV21_CAJ), [DEEN](https://github.com/ZYK100/LLCM), and [ffcv-imagenet](https://github.com/libffcv/ffcv-imagenet), we thank the authors for opensourcing their code!
+This code is built on [CAJ](https://github.com/mangye16/Cross-Modal-Re-ID-baseline/tree/master/ICCV21_CAJ), [DEEN](https://github.com/ZYK100/LLCM), and [ffcv-imagenet](https://github.com/libffcv/ffcv-imagenet) (DNS's training strategy), we thank the authors for opensourcing their code!
