@@ -8,7 +8,7 @@
 
 * **Dataset**
 
-  **Pku-Sketch:** Please refer to the paper "Cross-domain adversarial feature learning for sketch re-identification". [paper](https://drive.google.com/file/d/1ZTpPSUIOtNKwOZ_DurhOWqMd4lLdOtkF/view). Due to the LA requirement, we cannot provide relevant code, data, and dataset.
+  **Pku-Sketch:** Please refer to the paper "Cross-domain adversarial feature learning for sketch re-identification". [paper](https://drive.google.com/file/d/1ZTpPSUIOtNKwOZ_DurhOWqMd4lLdOtkF/view). Due to the LA requirement, we cannot provide relevant code, data, and dataset. I provide the `ckpt` and `result` of DNS on this dataset, please refer to [test.ipynb](./test.ipynb).
 
   **Market-Sketch-1K:** Please refer to the paper "Beyond Domain Gap: Exploiting Subjectivity in Sketch-Based Person Retrieval". [paper](https://arxiv.org/pdf/2309.08372). [official code](https://github.com/Lin-Kayla/subjectivity-sketch-reid).
 
