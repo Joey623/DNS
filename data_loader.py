@@ -66,6 +66,8 @@ class SYSUData(data.Dataset):
             transforms.RandomCrop((args.img_h, args.img_w)),
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
+            transforms.ColorJitter(hue=0.5),
+            transforms.RandomErasing(p=0.5, value=(0.4914, 0.4822, 0.4465)),
             normalize,
             ChannelRandomErasing(probability=0.5)])
 
@@ -75,6 +77,7 @@ class SYSUData(data.Dataset):
             transforms.RandomCrop((args.img_h, args.img_w)),
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
+            transforms.RandomErasing(p=0.5, value=(0.4914, 0.4822, 0.4465)),
             normalize,
             ChannelRandomErasing(probability=0.5)])
 
@@ -84,6 +87,7 @@ class SYSUData(data.Dataset):
             transforms.RandomCrop((args.img_h, args.img_w)),
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
+            transforms.RandomErasing(p=0.5, value=(0.4914, 0.4822, 0.4465)),
             normalize,
             ChannelRandomErasing(probability=0.5),
             ChannelExchange(gray=3)])
