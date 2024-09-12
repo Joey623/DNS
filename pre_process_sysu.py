@@ -5,7 +5,7 @@ import os
 
 # 对SYSU数据集进行一个序列化操作，转成npy文件。
 
-data_path = './autodl-tmp/SYSU-MM01/'
+data_path = '../Dataset/SYSU-MM01/'
 
 rgb_cameras = ['cam1', 'cam2', 'cam4', 'cam5']
 ir_cameras = ['cam3', 'cam6']
