@@ -24,7 +24,7 @@ import os
 
 parser = argparse.ArgumentParser(description='PyTorch Cross-Modality Training')
 # each changes
-parser.add_argument('--dataset', default='sysu', help='dataset name: regdb or sysu')
+parser.add_argument('--dataset', default='llcm', help='dataset name: regdb or sysu or llcm')
 parser.add_argument('--lr', default=0.2, type=float, help='learning rate, 0.00035 for adam, 0.0007for adamw')
 parser.add_argument('--model_path', default='save_model/', type=str,
                     help='model save path')
@@ -209,7 +209,7 @@ def adjust_lr(optimizer, batch_idx, lrs):
     return optimizer, optimizer.param_groups[-1]['lr'], optimizer.param_groups[0]['lr']
 
 
-# one circle learning rate
+# one cycle learning rate
 def get_cyclic_lr(epoch, lr, epochs, lr_peak_epoch):
     xs = [0, lr_peak_epoch, epochs]
     ys = [1e-4 * lr, lr, 0]
