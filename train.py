@@ -75,12 +75,12 @@ if dataset == 'sysu':
     log_path = args.log_path + 'sysu_log/'
     test_mode = [1, 2]  # thermal to visible
 elif dataset == 'regdb':
-    data_path = "./autodl-tmp/RegDB/"
+    data_path = "../Dataset/RegDB/"
     log_path = args.log_path + 'regdb_log/'
     # thermal to visible
     test_mode = [1, 2]
 elif dataset == 'llcm':
-    data_path = "./autodl-tmp/LLCM/"
+    data_path = "../Dataset/LLCM/"
     log_path = args.log_path + 'llcm_log/'
     test_mode = [1, 2]
 suffix = dataset
