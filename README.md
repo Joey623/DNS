@@ -76,7 +76,7 @@ Cross-modality person re-identification (ReID) is a challenging task that aims t
 
 ## Additional Comparison (Market-Sketch-1K Dataset)
 
-Due to my negligence, I did not notice the Market-Sketch-1k (mask1k) dataset during the submission as the DNS was completed in Sep. 2023. I discovered this issue when modifying camera-ready and urgently added relevant experiments. I cited this dataset in the camera-ready and added relevant experiments in the supplementary materials. For more information on the mask1k dataset, please refer to [paper](https://arxiv.org/pdf/2309.08372) and [official code](https://github.com/Lin-Kayla/subjectivity-sketch-reid).  Below is the comparison results. More information and corresponding codes about DNS in this dataset can be found in [here](./mask1k/README.md) (`./mask1k/`).
+We add the relevant experiments of Market-Sketch-1k (mask1k) dataset. For more information on the mask1k dataset, please refer to [paper](https://arxiv.org/pdf/2309.08372) and [official code](https://github.com/Lin-Kayla/subjectivity-sketch-reid).  Below is the comparison results. More information and corresponding codes about DNS in this dataset can be found in [here](./mask1k/README.md) (`./mask1k/`).
 
 ![experiments](./imgs/mask1k.png)
 
