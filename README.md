@@ -1,11 +1,5 @@
-# [ECCV2024] Domain Shifting: A Generalized Solution for Heterogeneous Cross-Modality Person Re-Identification.
-## Abstract
-
-Cross-modality person re-identification (ReID) is a challenging task that aims to match cross-modality pedestrian images across multiple camera views. Existing methods are tailored to specific tasks and perform well for visible-infrared or visible-sketch ReID. However, the performance exhibits a notable decline when the same method is utilized for multiple cross-modality ReIDs, limiting its generalization and applicability. To address this issue, we propose a generalized domain shifting method (DNS) for cross-modality ReID, which can address the generalization and perform well in both visible-infrared and visible-sketch modalities. Specifically, we propose the heterogeneous space shifting and common space shifting modules to augment specific and shared representations in heterogeneous space and common space, respectively, thereby regulating the model to learn the consistency between modalities. Further, a domain alignment loss is developed to alleviate the cross-modality discrepancies by aligning the patterns across modalities. In addition, a domain distillation loss is designed to distill identity-invariant knowledge by learning the distribution of different modalities. Extensive experiments on two cross-modality ReID tasks (*i.e.*, visible-infrared ReID, visible-sketch ReID) demonstrate that the proposed method outperforms the state-of-the-art methods by a large margin.
-
-## Pipeline
-
-![Pipeline image](./imgs/pipline.png)
+# [ECCV2024] [Domain Shifting: A Generalized Solution for Heterogeneous Cross-Modality Person Re-Identification](https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/09119.pdf).
+Welcome to use the code from our paper "Domain Shifting:  A Generalized Solution for Heterogeneous Cross-Modality Person Re-Identification".
 
 # Usage
 
@@ -74,14 +68,26 @@ Cross-modality person re-identification (ReID) is a challenging task that aims t
 
   Please note that this is optional, and you can also keep in touch with me by setting `max_epoch` to 100. The corresponding log (`max_epoch=80` and `max_epoch=150`) is provided in [here](./log/sysu_p6_n4_lr_0.2_seed_0_epoch80&150.log). I hope this can help you.
 
-## Additional Comparison (Market-Sketch-1K Dataset)
-
-We add the relevant experiments of Market-Sketch-1k (mask1k) dataset. For more information on the mask1k dataset, please refer to [paper](https://arxiv.org/pdf/2309.08372) and [official code](https://github.com/Lin-Kayla/subjectivity-sketch-reid).  Below is the comparison results. More information and corresponding codes about DNS in this dataset can be found in [here](./mask1k/README.md) (`./mask1k/`).
-
-![experiments](./imgs/mask1k.png)
-
-
-
 # Acknowledgements
 
 This code is built on [CAJ](https://github.com/mangye16/Cross-Modal-Re-ID-baseline/tree/master/ICCV21_CAJ), [DEEN](https://github.com/ZYK100/LLCM), and [ffcv-imagenet](https://github.com/libffcv/ffcv-imagenet) (DNS's training strategy), we thank the authors for opensourcing their code!
+
+# Contact
+
+If you have any questions, don't hesitate to contact me via [yan.jiang@oulu.fi](yan.jiang@oulu.fi).
+
+# Citation
+
+``` 
+@inproceedings{jiang2024domain,
+  title={Domain shifting: A generalized solution for heterogeneous cross-modality person re-identification},
+  author={Jiang, Yan and Cheng, Xu and Yu, Hao and Liu, Xingyu and Chen, Haoyu and Zhao, Guoying},
+  booktitle={European Conference on Computer Vision},
+  pages={289--306},
+  year={2024},
+  organization={Springer}
+}
+```
+
+
+
