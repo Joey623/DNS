@@ -74,7 +74,7 @@ This code is built on [CAJ](https://github.com/mangye16/Cross-Modal-Re-ID-baseli
 
 # Contact
 
-If you have any questions, don't hesitate to contact me via [yan.jiang@oulu.fi](yan.jiang@oulu.fi).
+If you have any questions, don't hesitate to contact me via [jiangyan@nuist.edu.cn](jiangyan@nuist.edu.cn).
 
 # Citation
 
